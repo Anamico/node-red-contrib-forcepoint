@@ -1,0 +1,50 @@
+{
+  "name": "node-red-contrib-forcepoint",
+  "version": "0.6.0",
+  "description": "Forcepoint nodes for Node-RED",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "node-red": {
+    "nodes": {
+      "forcepoint": "forcepoint/forcepoint.js",
+      "forcepoint block": "forcepoint/block.js"
+    }
+  },
+  "repository": "github:Anamico/node-red-contrib-forcepoint",
+  "author": {
+    "name": "Andrew Longhorn",
+    "email": "Andrew_Longhorn@McAfee.com",
+    "url": "https://www.linkedin.com/in/andrewlonghorn/"
+  },
+  "contributors": [
+    {
+      "name": "Andrew Longhorn",
+      "email": "Andrew_Longhorn@McAfee.com",
+      "url": "https://www.linkedin.com/in/andrewlonghorn/"
+    }
+  ],
+  "license": "MIT",
+  "homepage": "https://flows.nodered.org/node/node-red-contrib-forcepoint",
+  "bugs": "https://github.com/Anamico/node-red-contrib-forcepoint/issues",
+  "dependencies": {
+    "async": "^2.6.1",
+    "request": "^2.88.0"
+  },
+  "keywords": [
+    "forcepoint",
+    "firewall",
+    "reputation",
+    "security",
+    "node-red",
+    "threat",
+    "automation"
+  ],
+  "maintainers": [
+    {
+      "name": "Andrew Longhorn",
+      "email": "Andrew_Longhorn@McAfee.com"
+    }
+  ]
+}

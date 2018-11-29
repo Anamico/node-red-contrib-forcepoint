@@ -1,0 +1,45 @@
+<script type="text/javascript">
+    RED.nodes.registerType('forcepoint', {
+        category: 'config',
+        color: '#FFFFFF',
+        defaults: {
+            name: { value : "", required: true },
+            url: { value : "", required: true }
+        },
+        credentials: {
+            authkey: { type:"password", required: true }
+        },
+        icon: "forcepoint.png",
+        label: function() {
+            return this.name;
+        },
+        paletteLabel: 'Forcepoint'
+    });
+</script>
+
+<script type="text/x-red" data-template-name="forcepoint">
+    <div class="form-row">
+        <label for="node-config-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-config-input-name" placeholder="Name">
+    </div>
+
+    <div class="form-row">
+        <label for="node-config-input-url"><i class="fa fa-server"></i> Url</label>
+        <input type="text" id="node-config-input-url" placeholder="http://smcurl:8082/6.1/">
+    </div>
+    
+    <p><b>API Key</b></p>
+    <div style="margin-left: 20px; display: block;" class="node-input-forcepointAuth-row">
+        <div class="form-row">
+            <label for="node-config-input-authkey"><i class="fa fa-asterisk"></i>
+            <span data-i18n="node-red:common.label.authkey">Authkey</span></label>
+            <input type="password" id="node-config-input-authkey">
+        </div>
+    </div>
+
+
+</script>
+
+<script type="text/x-red" data-help-name="forcepoint">
+    <p>Specify the required parameters to connect to your Forcepoint appliance</p>
+</script>

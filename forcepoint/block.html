@@ -1,0 +1,67 @@
+<script type="text/javascript">
+    RED.nodes.registerType('forcepoint block', {
+        category: 'forcepoint',
+        color: '#FFFFFF',
+        defaults: {
+            name: { value : "" },
+            forcepoint: { type: 'forcepoint', required: true },
+            ipListName: { value: '' },
+            comment: { value: '' }
+        },
+        inputs: 1,
+        outputs: 0,
+        inputLabels: "ip",
+        paletteLabel: 'block ip',
+        icon: "forcepoint.png",
+        label: function() {
+            return this.name || 'forcepoint block';
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="forcepoint block">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-forcepoint"><i class="fa fa-server"></i> Forcepoint</label>
+        <input type="text" id="node-input-forcepoint" placeholder="forcepoint">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-ipListName"><i class="icon-box"></i> Ip List Name</label>
+        <input type="text" id="node-input-ipListName" placeholder="bad_shared_ip">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-comment"><i class="icon-comment"></i> Comment</label>
+        <input type="text" id="node-input-comment" placeholder="Added via node-red">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="forcepoint block">
+    <p>Send a payload to this node to block an ip.</p>
+    <h3>Inputs</h3>
+    <dl class="message-properties">
+        <dt>payload.ip
+            <span class="property-type">ip to block </span>
+        </dt>
+        <dt>payload.ipListName
+            <span class="property-type">the ip list to add the ip into</span>
+        </dt>
+        <dt>payload.comment
+            <span class="property-type">the comment to attach to the ip_list (if it's created)</span>
+        </dt>
+    </dl>
+    <h3>Details</h3>
+    <p>The <b>ipListName</b> field is optional, it will default to 'bad_shared_ip', or the value you enter in the node.
+        If you send payload.ipListName, it will be the list that is used/created instead.
+    </p>
+    <p>The <b>comment</b> field is also optional, it will default to 'Added via node-red',
+        or the value you enter in the node.
+        If you send payload.comment, it will be the value that is used instead. It is ONLY used if the named ip list
+        does not yet exist and it is created, otherwise it is ignored.
+    </p>
+</script>
